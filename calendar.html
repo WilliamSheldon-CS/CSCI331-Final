@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue — Booking Calendar</title>
+
+    <meta name="description" content="Book your appointment through BlueSite’s interactive weekly scheduling calendar.">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/calendar.css">
+</head>
+
+<body>
+
+<header class="header" role="banner">
+    <div class="logo">Blue</div>
+    <nav class="nav" role="navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="calendar.html">Book</a>
+        <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="booking-section" role="main">
+
+    <h1 class="page-title">Booking Calendar</h1>
+
+    <!-- Week Navigation -->
+    <div class="week-nav">
+        <button id="prev-week" aria-label="View previous week">&lt; Previous</button>
+        <span id="week-range"></span>
+        <button id="next-week" aria-label="View next week">Next &gt;</button>
+    </div>
+
+    <!-- CALENDAR GRID -->
+    <div class="calendar-wrapper">
+
+        <!-- TOP-LEFT corner (empty) -->
+        <div class="time-column-header"></div>
+
+        <!-- DAY HEADER ROW -->
+        <div class="day-header-row" id="day-header-row" role="row"></div>
+
+        <!-- TIME COLUMN -->
+        <div class="time-column" id="time-column"></div>
+
+        <!-- MAIN GRID (day columns) -->
+        <div class="calendar-grid" id="calendar-grid" role="grid"></div>
+    </div>
+
+    <div id="selection-display" class="selection-display">
+        Drag on the calendar to select a time range.
+    </div>
+
+    <!-- CUSTOMER CHECKOUT PANEL -->
+    <div class="checkout-panel">
+        <h2>Your Selected Times</h2>
+        <ul class="checkout-list" id="checkout-list">
+            <!-- JS will populate selections here -->
+        </ul>
+        <div class="checkout-total" id="checkout-total">
+            Total: 0 bookings
+        </div>
+        <button class="checkout-button" id="checkout-btn">Checkout</button>
+    </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="content">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:info@blue.com">info@blue.com</a></p>
+    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+</section>
+
+<footer class="footer" role="contentinfo">
+    © 2025 Blue | <a href="#contact">Contact Us</a>
+</footer>
+
+<!-- Smooth scrolling for anchor links -->
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+</script>
+
+<!-- JS Calendar Logic -->
+<noscript>
+    <p style="text-align:center; color:red;">
+        JavaScript is required for the interactive calendar to function.
+    </p>
+</noscript>
+<script src="scripts/calendar.js" defer></script>
+
+</body>
+</html>

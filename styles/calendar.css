@@ -1,0 +1,227 @@
+/* ==========================================
+   CALENDAR PAGE — MAIN LAYOUT
+========================================== */
+.booking-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Week Navigation */
+.week-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.week-nav button {
+    padding: 8px 15px;
+    background: var(--blue-accent, #4fa8e3);
+    color: var(--white, #fff);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.week-nav button:hover {
+    background: var(--blue-dark, #286da8);
+}
+
+/* ==========================================
+   CALENDAR GRID LAYOUT
+========================================== */
+.calendar-wrapper {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 40px 1fr;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    height: 700px;
+    border: 2px solid var(--blue-accent, #4fa8e3);
+    border-radius: 10px;
+    background: var(--white, #fff);
+    overflow: hidden;
+}
+
+/* TOP-LEFT CORNER */
+.time-column-header {
+    background: var(--blue-main, #2196f3);
+    border-right: 2px solid var(--blue-accent, #4fa8e3);
+    border-bottom: 2px solid var(--blue-accent, #4fa8e3);
+}
+
+/* DAY HEADER ROW */
+.day-header-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: var(--blue-main, #2196f3);
+    border-bottom: 2px solid var(--blue-accent, #4fa8e3);
+    text-align: center;
+    font-weight: bold;
+    color: var(--blue-dark, #0d47a1);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+/* TIME COLUMN */
+.time-column {
+    background: var(--blue-light, #bbdefb);
+    border-right: 2px solid var(--blue-main, #2196f3);
+    position: relative;
+}
+
+.time-label {
+    position: absolute;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: var(--blue-dark, #0d47a1);
+}
+
+/* DAY COLUMNS */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    position: relative;
+    height: 100%;
+}
+
+.day-column {
+    position: relative;
+    border-left: 1px solid var(--blue-main, #2196f3);
+    cursor: crosshair;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* BLOCKED TIME AREAS */
+.blocked-block {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: rgba(120, 120, 120, 0.50);
+    border: 1px solid rgba(90, 90, 90, 0.7);
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* USER SELECTION */
+.selection-block {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: rgba(79, 168, 227, 0.50);
+    border: 2px solid var(--blue-accent, #4fa8e3);
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.selection-display {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--blue-dark, #0d47a1);
+}
+
+/* ==========================================
+   RESPONSIVE DAY HEADER
+========================================== */
+.month-day {
+    margin-left: 4px;
+}
+.comma {
+    margin-right: 2px;
+}
+
+@media (max-width: 600px) {
+    .day-header-row .month-day,
+    .day-header-row .comma {
+        display: none;
+    }
+}
+
+/* ==========================================
+   CUSTOMER CHECKOUT PANEL
+========================================== */
+.checkout-panel {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid var(--blue-accent, #4fa8e3);
+    border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--white, #fff);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.checkout-panel h2 {
+    font-size: 1.5rem;
+    color: var(--blue-dark, #0d47a1);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.checkout-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--blue-light, #bbdefb);
+    border-radius: 5px;
+}
+
+.checkout-list li {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--blue-light, #bbdefb);
+    font-size: 0.95rem;
+    color: var(--blue-dark, #0d47a1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout-list li:last-child {
+    border-bottom: none;
+}
+
+.checkout-total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: right;
+    margin-bottom: 15px;
+    color: var(--blue-dark, #0d47a1);
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--white, #fff);
+    background-color: var(--blue-accent, #4fa8e3);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+    background-color: var(--blue-dark, #286da8);
+}
+
+@media (max-width: 600px) {
+    .checkout-panel {
+        padding: 15px;
+    }
+    .checkout-button {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+}

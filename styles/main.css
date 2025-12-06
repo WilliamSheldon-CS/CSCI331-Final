@@ -1,0 +1,141 @@
+
+/* -------------------- COLORS -------------------- */
+:root {
+    --blue-light: #dff3ff;
+    --blue-main: #8ec9f2;
+    --blue-accent: #4fa8e3;
+    --blue-dark: #2e6f9e;
+    --text-dark: #1b1b1b;
+    --white: #ffffff;
+
+    --blue-light-hover: #cce6ff;
+    --blue-accent-hover: #3f90d1;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--blue-light);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.header {
+    background: var(--blue-main);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--blue-accent);
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: var(--blue-dark);
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--blue-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--blue-accent);
+    outline: none;
+}
+
+.nav-link:focus {
+    outline: 2px solid var(--blue-accent);
+    outline-offset: 2px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, var(--blue-main), var(--blue-light));
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 60px 15px;
+    }
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: var(--blue-accent);
+    color: var(--white);
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cta-btn:hover {
+    background: var(--blue-dark);
+}
+
+.cta-btn:focus {
+    outline: 2px solid var(--blue-accent);
+    outline-offset: 2px;
+}
+
+.content {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    width: clamp(200px, 30%, 250px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--blue-dark);
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--blue-main);
+    border-top: 3px solid var(--blue-accent);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    position: relative; /* ensure hidden link positions correctly */
+}
+
+/* -------------------- HIDDEN ADMIN LINK -------------------- 
+.hidden-admin-link {
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: .5px;
+    right: .5px;
+    opacity: 0;
+    pointer-events: auto;
+}
+*/

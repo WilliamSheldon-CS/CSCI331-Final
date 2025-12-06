@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue — Home</title>
+
+    <meta name="description" content="Blue — Book your appointments online easily.">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+<header class="header" role="banner">
+    <div class="logo">Blue</div>
+    <nav class="nav" role="navigation">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="calendar.html">Book</a>
+        <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Welcome to Blue</h1>
+    <p>Book your appointments quickly and easily using our online calendar.</p>
+    <a href="calendar.html" class="cta-btn">Book Now</a>
+</section>
+
+<section id="contact" class="content">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:info@blue.com">info@blue.com</a></p>
+    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+</section>
+
+<footer class="footer" role="contentinfo">
+    © 2025 Blue | <a href="#contact">Contact Us</a>
+    <!--<a href="admin.html" class="hidden-admin-link" aria-label="Admin Access"></a>-->
+</footer>
+
+<!-- Smooth scrolling for anchor links -->
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
