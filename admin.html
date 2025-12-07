@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueSite — Admin Scheduler</title>
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/calendar.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">BlueSite Admin</div>
+    <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="calendar.html">Booking Calendar</a>
+        <a class="nav-link active" href="admin.html">Admin</a>
+    </nav>
+</header>
+
+<section class="booking-section">
+
+    <h1 class="page-title">Admin Calendar Manager</h1>
+    <h2>Edit Existing Bookings Only</h2>
+
+    <div class="admin-settings-box">
+        <label>
+            Minimum minutes between bookings:  
+            <input type="number" id="gap-setting" min="0" value="0"> minutes
+        </label>
+        <button id="save-gap-btn">Save Setting</button>
+        <p id="gap-status" class="status-msg"></p>
+    </div>
+
+    <div class="week-nav">
+        <button id="prev-week">&lt; Previous</button>
+        <span id="week-range"></span>
+        <button id="next-week">Next &gt;</button>
+    </div>
+
+    <div class="calendar-wrapper">
+        <div class="time-column-header"></div>
+        <div class="day-header-row" id="day-header-row"></div>
+        <div class="time-column" id="time-column"></div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+    </div>
+
+    <div id="selection-display" class="selection-display">
+        Double-click a booking to delete it. Click-and-drag to resize existing bookings.
+    </div>
+
+</section>
+
+<script src="scripts/admin.js" defer></script>
+
+</body>
+</html>
